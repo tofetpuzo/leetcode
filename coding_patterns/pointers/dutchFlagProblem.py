@@ -1,2 +1,26 @@
-def by():
-    pass
+def swap_index(my_list, idx1, idx2):
+    temp = my_list[idx1]
+    my_list[idx1] = my_list[idx2]
+    my_list[idx2] = temp
+    
+    
+def pivot_sort(my_list, pivot_index, end_idex):
+    swap_idx = pivot_index
+    for i in range(pivot_index+1, end_idex+1):
+        if my_list[i] < my_list[pivot_index]:
+            swap_idx+=1
+            swap_index(my_list, swap_idx, i)
+    swap_index(my_list, pivot_index, swap_idx)   
+    return swap_idx
+
+def quick_sort(my_list, left, right):
+    if left < right:
+        pivot_index = pivot_sort(my_list, left, right)
+        quick_sort(my_list, left, pivot_index-1)
+        quick_sort(my_list,pivot_index+1, right)
+    return my_list
+
+def quick_sort(my_list):
+    return quick_sort(my_list, 0, len(my_list)-1)
+
+print
