@@ -53,12 +53,7 @@ def intervals(s: List[List[int]]):
             combined.append(list2)
             lists-=1
             break
-            
-            
-        # while j < len(s[lists+1]) -1:
-        #     combined.append(s[lists])
-        #     j+=1
-                
+
     return combined
                 
                 
