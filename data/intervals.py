@@ -25,8 +25,8 @@
 
 from typing import List
 
-# s = [[1,3],[2,6],[8,10],[15,18]]
-s = [[1,4],[4,5]]
+s = [[1,3],[2,6],[8,10],[15,18]]
+# s = [[1,4],[4,5]]
 def intervals(s: List[List[int]]):
     combined = []
     i = 1
@@ -40,7 +40,7 @@ def intervals(s: List[List[int]]):
             # [[1,3],[2,6],[8,10],[15,18]]        
                 
             if list1[i] > list2[j]:
-                combined.append([list1[i-1] , list2[j+1]])
+                combined.append([list1[i-1] , list2[-1]])
                 i+=1
                 break
             else:     
