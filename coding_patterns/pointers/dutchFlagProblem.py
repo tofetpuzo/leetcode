@@ -13,14 +13,15 @@ def pivot_sort(my_list, pivot_index, end_idex):
     swap_index(my_list, pivot_index, swap_idx)   
     return swap_idx
 
-def quick_sort(my_list, left, right):
+def quick_sort_helper(my_list, left, right):
     if left < right:
         pivot_index = pivot_sort(my_list, left, right)
-        quick_sort(my_list, left, pivot_index-1)
-        quick_sort(my_list,pivot_index+1, right)
+        quick_sort_helper(my_list, left, pivot_index-1)
+        quick_sort_helper(my_list,pivot_index+1, right)
     return my_list
 
 def quick_sort(my_list):
-    return quick_sort(my_list, 0, len(my_list)-1)
+    return quick_sort_helper(my_list, 0, len(my_list)-1)
 
-print
+nums = [2, 0, 2, 1, 1, 0]
+print(quick_sort(nums))
