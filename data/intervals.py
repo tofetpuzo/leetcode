@@ -30,7 +30,7 @@ from typing import List
 s = [[1,4],[1,4]]
 # s = [[1,4],[4,5]]
 # s = [[1,3]]
-# s = [[1,4],[0,4]]
+# s = [[1,4]m,[0,4]]
 # s = [[1,4],[5,6]]
 
 def intervals(s: List[List[int]]):
@@ -62,8 +62,7 @@ def intervals(s: List[List[int]]):
             else:     
                 combined.extend([list1, list2])
                 break
-                
-                
+           
         while lists:          
             combined.append(list2)
             lists-=1
