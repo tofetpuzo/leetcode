@@ -25,7 +25,7 @@ def openLock(deadends: List[List[str]], target: str) -> int:
             return turns
         
         # the number of turns it took to get  
-        for child in  children(lock):
+        for child in children(lock):
             if child not in visit:
                 visit.add(child)
                 q.append([child ,turns + 1])
