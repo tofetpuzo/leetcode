@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from typing import List
 # given an array nums with n objects colored red, white or blue sort them 
 # in place so that objects of the same color are adjacent with the colors
@@ -16,7 +15,6 @@ def dutchFlagProblem(nums: List[int]):
     if len(nums) > 2:
         return nums
     
-=======
 def swap_index(my_list, idx1, idx2):
     temp = my_list[idx1]
     my_list[idx1] = my_list[idx2]
@@ -44,4 +42,4 @@ def quick_sort(my_list):
 
 nums = [2, 0, 2, 1, 1, 0]
 print(quick_sort(nums))
->>>>>>> 92b48eb2b6764554ceb0e5443090cc1dfdca31e9
+
