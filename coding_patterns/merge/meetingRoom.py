@@ -8,10 +8,7 @@
 # room1 : (0, 30)
 # room2: (5, 10), (15, 20) 
 
-
 from typing import List
-
-
 
 def meetingRoom(intervals: List[tuple[int]]):
     start = sorted([i for i, _ in intervals])

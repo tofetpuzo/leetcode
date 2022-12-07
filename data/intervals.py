@@ -25,9 +25,9 @@
 
 from typing import List
 
-# s = [[1,3],[2,6],[8,10],[15,18]]
+s = [[1,3],[2,6],[8,10],[15,18]]
 # 
-s = [[1,4],[1,4]]
+# s = [[1,4],[1,4]]
 # s = [[1,4],[4,5]]
 # s = [[1,3]]
 # s = [[1,4]m,[0,4]]
@@ -67,6 +67,7 @@ def intervals(s: List[List[int]]):
             combined.append(list2)
             lists-=1
             break
+        
 
     return combined
                          
