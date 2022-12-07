@@ -3,18 +3,18 @@ from typing import List
 
 def duplicates(nums: List[int]):
     # this is a linked list algorithm
-    #
 
     # find the point the two intersect at 
     slow , fast = 0, 0
     while True:
-        if (slow < 0 or fast < 0 or slow >len(nums) or fast >len(nums)):
+        if (slow < 0 or fast < 0 or slow > len(nums) or fast > len(nums)):
             return False
+
         slow = nums[slow]
         fast = nums[nums[fast]]
         if slow == fast:
             return True
-
+            
         fast = nums[nums[fast]]
 
         if slow == fast:
@@ -37,6 +37,6 @@ def duplicates(nums: List[int]):
     #     else:
     #         return False
     
-nums = [2, -1, 1, 2]
-
+# nums = [2, -1, 1, 2, 24]
+nums = [-1, -2, -3, -4, -5, 6]
 print(duplicates(nums))
