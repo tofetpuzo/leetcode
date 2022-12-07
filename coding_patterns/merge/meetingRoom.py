@@ -7,5 +7,24 @@
 # explanation we need two meeting rooms 
 # room1 : (0, 30)
 # room2: (5, 10), (15, 20) 
-def meetingRoom():
-    pass
+
+
+from typing import List
+
+
+def meetingRoom(intervals: List[tuple[int]]):
+    start = sorted([i for i in intervals])
+    end = sorted([i for i in intervals])
+    res, output = 0, 0
+    s , e = 0, 0
+    while s < len(intervals):
+        if start[s] < end[e]:
+            s +=1
+            output+=1
+        else:
+            e +=1
+            output -=1
+
+        res = max(res, output)
+    return res
+
