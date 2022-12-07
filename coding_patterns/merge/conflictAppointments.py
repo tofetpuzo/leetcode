@@ -9,7 +9,7 @@ def conflictAppointments(appointments: List[List[int]]):
     
     for i in range(1, len(appointments)):
         interv = appointments[i]
-        if end > interv[0]:
+        if end >= interv[0]:
             sf += '{0} and {1} conflict \n'.format(
                 [start, end], [interv[0], interv[1]])
         else:
