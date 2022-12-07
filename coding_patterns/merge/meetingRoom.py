@@ -12,9 +12,10 @@
 from typing import List
 
 
+
 def meetingRoom(intervals: List[tuple[int]]):
-    start = sorted([i for i in intervals])
-    end = sorted([i for i in intervals])
+    start = sorted([i for i, _ in intervals])
+    end = sorted([e for _ , e in intervals])
     res, output = 0, 0
     s , e = 0, 0
     while s < len(intervals):
@@ -27,4 +28,6 @@ def meetingRoom(intervals: List[tuple[int]]):
 
         res = max(res, output)
     return res
+interval = [(0, 30), (5, 10), (15, 20)]
 
+print(meetingRoom(interval))
