@@ -2,7 +2,7 @@ import heapq
 from typing import List
 
 
-def minCostConnectPoints(points: List[List[int]]) -> int:
+def minCostConnectPoints(points: List[List[int]]):
     N = len(points)
     adj = {i: [] for i in range(N)} #adj : [cost, node]
     
