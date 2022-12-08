@@ -15,10 +15,12 @@ def countPairsNode(root: 'TreeNode', distance: int):
     if not root:
         return 0
 
-    good_pairs = 0
+   
 
     def postOrder(node, distance):
         # there is no node to a leaf node to process
+        
+        good_pairs = 0
         if not node:
             return []
 
