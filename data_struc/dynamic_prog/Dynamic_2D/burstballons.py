@@ -2,7 +2,7 @@
 # with a number on it represented by an array nums. You are asked
 #  to burst all the ballons
 # if you burst the ith ballon, you will get adj= nums[i -1] * nums[i] * nums[i +1]
-# coins. if i - 1 or i +1 goes out of the array, then treat ir as if
+# coins. if i - 1 or i +1 goes out of the array, then treat it as if
 # there is a ballon with a 1 painted on it
 # return the maximum coins you can collect
 
