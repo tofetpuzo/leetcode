@@ -4,5 +4,21 @@
 
 
 # inoder travesal: always in sorted order
-def inorderSuccessorBST():
-    pass
+
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def inorderSuccessorBST(root: TreeNode, p: TreeNode):
+    # root = [2, 1, 3]
+    successor = None
+    while root:
+        if p.value >= root.value:
+            root = root.right
+        else:
+            successor = root
+            root = root.left
+    
+    return successor
