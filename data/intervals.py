@@ -30,7 +30,7 @@ s = [[1,3],[2,6],[8,10],[15,18]]
 # s = [[1,4],[1,4]]
 # s = [[1,4],[4,5]]
 # s = [[1,3]]
-# s = [[1,4]m,[0,4]]
+# s = [[1,4],[0,4]]
 # s = [[1,4],[5,6]]
 
 def intervals(s: List[List[int]]):
@@ -49,7 +49,7 @@ def intervals(s: List[List[int]]):
         while i < len(list1) and j < len(list2):
             # [[1,3],[2,6],[8,10],[15,18]]        
                 
-            if list1[i] >= list2[j] and list2[j] > list1[i - 1]:
+            if list1[i] > list2[j] and list2[j] > list1[i - 1]:
                 combined.append([list1[i-1] , list2[-1]])
                 i+=1
                 break
