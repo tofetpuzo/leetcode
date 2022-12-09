@@ -7,7 +7,6 @@
 # p = 5, q = 4 -> return 5
 # p =2 , q = 7 -> return 2
 
-from typing import List
 
 class TreeNode:
     def __init__(self, value):
