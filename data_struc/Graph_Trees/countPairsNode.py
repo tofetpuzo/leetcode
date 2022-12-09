@@ -40,4 +40,3 @@ def countPairsNode(root: 'TreeNode', distance: int):
         return [1 + dist for dist in l_left_dists + r_right_dists]
     postOrder(root, distance)
 
-    pass
