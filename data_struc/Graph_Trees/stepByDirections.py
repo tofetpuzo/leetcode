@@ -42,6 +42,6 @@ def stepByDirections(root: Optional[TreeNode], startValue: int, destValue: int) 
         else:
             for child, dir in graph[cur_val]:
                 if child not in visited:
-                    queue.append((cur_val , cur_path+ dir))
+                    queue.append((cur_val , cur_path + dir))
         
         
