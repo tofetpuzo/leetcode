@@ -15,4 +15,53 @@ class TreeNode:
 
 
 def rangeSumBST(root: Optional[TreeNode], low: int, high: int):
-    pass
+
+    range_sum = 0
+
+    dfs(root, low, high)
+
+       # recursively
+
+    def dfs(node, low, high):
+        if not node:
+            return None
+
+        if node:
+            if low<= node.value <= high:
+                ans+= node.value
+
+            if low < node.value:
+                dfs(node, low, high)
+
+            if node.value < high:
+               dfs(node, low, high)
+
+    return range_sum
+
+    if not root:
+        return None
+
+    ans = 0
+    stack = [root]
+
+    # iteratively
+
+    while stack:
+        node = stack.pop()
+        
+        if node:
+            if low <= node.value <= high:
+                ans+= node.value
+
+            if low < node.value:
+                stack.append(node.left)
+            
+            if node.value < high:
+                stack.append(node.right)
+
+    return ans
+
+ 
+
+
+            
