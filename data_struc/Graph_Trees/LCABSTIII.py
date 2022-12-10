@@ -27,3 +27,9 @@ def lowestCommonAncestor2(p: Node, q: Node):
     p_copy = p
     q_copy = q
     
+    while p_copy != q_copy:
+        q_copy = q_copy if q_copy else p
+        p_copy = p_copy if p_copy else q
+
+
+    return p_copy
