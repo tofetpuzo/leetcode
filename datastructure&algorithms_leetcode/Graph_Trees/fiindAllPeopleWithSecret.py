@@ -24,10 +24,40 @@ def findAllPeopleWithSecret(meetings: List[List[int]], firstPerson: int):
     
     meeting_dict = collections.defaultdict(list)
     
-    for person1, person2, time in meeting_dict:
+    for person1, person2, time in meetings:
         meeting_dict[time].append([person1, person2])
         
     has_secret = set((0, firstPerson))
+    
+    for times, meetings_persons in meeting_dict.items():
+        graph = collections.defaultdict(list)
+        seen = set()
+        
+        for person_1, person_2 in meetings_persons:
+            graph[person_1].append(person_2)
+            graph[person_2].append(person_1)
+            if person_1 in has_secret:
+                seen.add(person_1)
+                
+            if person_1 in has_secret:
+                seen.add(person_1)
+        
+        queue = collections.deque(seen)
+        while queue:
+            person = queue.popleft()
+            
+            for nei in graph[person]:
+                if nei not in has_secret:
+                    has_secret.add(nei)
+                    queue.append(nei)
+    
+    return has_secret
+                    
+            
+        
+        
+        
+    
 
     
 
