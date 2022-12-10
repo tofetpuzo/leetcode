@@ -27,7 +27,7 @@ def findAllPeopleWithSecret(meetings: List[List[int]], firstPerson: int):
     for person1, person2, time in meeting_dict:
         meeting_dict[time].append([person1, person2])
         
-    has_secret = set((0, firstPerson)
+    has_secret = set((0, firstPerson))
 
     
 
