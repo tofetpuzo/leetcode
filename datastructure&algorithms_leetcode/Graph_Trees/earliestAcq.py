@@ -1,6 +1,8 @@
-# There are n people in a social group labeled from 0 to n -1. You are given an array logs where logs[i] = [timespace[i], xi, yi] indicates that xi and yi will be friends at the time timestampi,
+# There are n people in a social group labeled from 0 to n -1. You are given an array logs where logs[i] = [timespace[i], xi, yi] 
+# indicates that xi and yi will be friends at the time timestampi,
 
-# friends is symmetric. That means if a is friends with b, then b is friends with a. Also, person a is acquainted with a person b if a is friends with b, or a is friend of someone acquainted with b.
+# friends is symmetric. That means if a is friends with b, then b is friends with a. 
+# Also, person a is acquainted with a person b if a is friends with b, or a is friend of someone acquainted with b.
 
 # return the earliest time for which every person become acquainted with every other person. if there is no such earlies time, return -1
 
@@ -20,8 +22,33 @@
 
 # The sixth event occurs at timestamp = 20190301 and after 0 and 3 become friends we have that all become friends.
 
+import collections
 from typing import List
 
 
-def earliestAcq(logs: List[List[int]], n: int):
-    pass
+def earliestAcq(logs: List[List[int]], N: int):
+    logs.sort(key=lambda x : x[0])
+
+    graph = collections.defaultdict(set)
+
+    for i in range(N):
+        graph[i] = {i}
+        print(graph[i])
+
+
+    for ts , p1, p2 in logs:
+        graph[p1] = graph[p1].union(graph[p2])
+
+        for p3 in graph[p1]:
+            graph[p3] = graph[p1]
+
+        if len(graph[p1]) == N:
+
+    return -1
+
+
+
+
+logs = [[20190101,0,1],[20190104,3,4],[20190107,2,3],[20190211,1,5],[20190224,2,4],[20190301,0,3],[20190312,1,2],[20190322,4,5]]
+N = 6
+print(earliestAcq(logs, N))
