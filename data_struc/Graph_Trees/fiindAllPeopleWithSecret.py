@@ -13,3 +13,25 @@
 
 # return a list of all the people that have the secret after all the meetings have taken place. 
 
+# n = 6 , meetings =[[1, 2, 5], [2, 3, 8], [1, 5, 10]], firstPerson = 1
+# output: [0, 1, 2, 3, 5]
+import collections
+from typing import List
+
+
+def findAllPeopleWithSecret(meetings: List[List[int]], firstPerson: int):
+    meetings.sort(key=lambda x : x[2])
+    
+    meeting_dict = collections.defaultdict(list)
+    
+    for person1, person2, time in meeting_dict:
+        meeting_dict[time].append([person1, person2])
+        
+    has_secret = set((0, )
+
+    
+
+
+meetings = [[1, 2, 5], [2, 3, 8], [1, 5, 10]]
+firstPerson = 1
+print(findAllPeopleWithSecret(meetings, 2))
