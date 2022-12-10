@@ -43,6 +43,7 @@ def earliestAcq(logs: List[List[int]], N: int):
             graph[p3] = graph[p1]
 
         if len(graph[p1]) == N:
+            return ts
 
     return -1
 
