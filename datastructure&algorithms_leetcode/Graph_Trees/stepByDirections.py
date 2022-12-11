@@ -8,7 +8,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
-def stepByDirections(root: Optional[TreeNode], startValue: int, destValue: int) -> str:
+def stepByDirections(root: Optional[TreeNode], startValue: int, destValue: int):
     graph = collections.defaultdict(list) 
     queue = collections.deque([root])
     
