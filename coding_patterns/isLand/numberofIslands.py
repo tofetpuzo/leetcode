@@ -7,7 +7,7 @@ def numberofIslands(grid: List[List[int]]):
     if not grid:
         return 0
     
-    directions = [ [1, 0], [-1, 0], [0, 1],  [0, -1]]
+    directions = [[1, 0], [-1, 0], [0, 1],  [0, -1]]
     visit = set()
     res = 0
 
