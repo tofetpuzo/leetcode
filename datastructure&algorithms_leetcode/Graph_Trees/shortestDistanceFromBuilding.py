@@ -2,7 +2,7 @@
 # each 0 marks an empty land that you can pass by freely
 # each 1 marks a building that you cannot pass through and
 # each 2 marks an obstacle that you cannot pass through
-# you wan tot build a house on an empty land that reaches all buildings in the shortest total travel distance
+# you want to build a house on an empty land that reaches all buildings in the shortest total travel distance
 # you can only move up , down left and right
 # return the shortest travel distance for such a house. if it is possible to build such a house according to the above rules, 
 # return 1. the total distance is the sum of the distance between the houses of the friends and the meeting point
