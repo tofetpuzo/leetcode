@@ -27,7 +27,7 @@ def numberofIslands(grid: List[List[int]]):
 
     for r in range(ROWS):
         for c in range(COLS):
-            if ((r, c) not in visit and grid =="1"):
+            if ((r, c) not in visit and grid[r][c] =="1"):
                 bfs(r, c)
                 res +=1
 
