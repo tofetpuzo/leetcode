@@ -39,8 +39,8 @@ def findAllPeopleWithSecret(meetings: List[List[int]], firstPerson: int):
             if person_1 in has_secret:
                 seen.add(person_1)
                 
-            if person_1 in has_secret:
-                seen.add(person_1)
+            if person_2 in has_secret:
+                seen.add(person_2)
         
         queue = collections.deque(seen)
         while queue:
@@ -51,7 +51,7 @@ def findAllPeopleWithSecret(meetings: List[List[int]], firstPerson: int):
                     has_secret.add(nei)
                     queue.append(nei)
     
-    return has_secret
+    return list(has_secret)
                     
             
         
