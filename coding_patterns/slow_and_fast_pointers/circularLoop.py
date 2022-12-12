@@ -10,7 +10,6 @@ def circularArray(nums: List[int]):
         if nums[i] != 0:
             is_Positive = isPostive(nums[i])
             current = (i + nums[i]) % len(nums)
-            print(current, i , nums[i] , len(nums))
             nums[i] = 0
             was_in_loop = False
             while nums[current] != 0 and isPostive(nums[current]) == is_Positive:
