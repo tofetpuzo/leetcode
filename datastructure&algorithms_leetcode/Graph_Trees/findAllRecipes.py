@@ -47,8 +47,24 @@ def findAllRecipes(recipes: list[str], ingredients: list[list[str]], supplies: l
         for ingr in ingre:
             graph[ingr].append(recipe)
 
+    res = []
 
-    print(graph)
+    queue = collections.deque(supplies)
+    recipes = set(recipes)
+
+    while queue:
+        supply = queue.popleft()
+        if supply in recipes:
+            res.append(supply)
+
+        for recipe in graph[supply]:
+            indegree_no[recipe] -=1
+
+            if indegree_no[recipe] == 0:
+                queue.append(recipe)
+
+    return res
+    
 
 recipes = ["bread","sandwich","burger"]
 ingredients = [["yeast","flour"],["bread","meat"],["sandwich","meat","bread"]]
