@@ -8,6 +8,7 @@ class TreeNode:
         self.left = left
         self.right = right
         
+    
 class Solution:
     def levelOrder(root: TreeNode):
         if not root:
@@ -31,9 +32,5 @@ class Solution:
                     
             return res
         
-root = [3, 9, 20, None, 15, 7]   
-cd = TreeNode(root)
-clss = Solution().levelOrder(cd)
-
-print(clss)
-                               
+# root = [3, 9, 20, None, 15, 7]   
+                
