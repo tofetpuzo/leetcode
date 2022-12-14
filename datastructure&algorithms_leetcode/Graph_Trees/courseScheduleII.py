@@ -42,4 +42,4 @@ def courseScheduleII(numCourse: int, prerequisites: list[list[int]]):
 
 
 
-print(courseSchedule(numCourse, prerequisites))
+print(courseScheduleII(numCourse, prerequisites))
