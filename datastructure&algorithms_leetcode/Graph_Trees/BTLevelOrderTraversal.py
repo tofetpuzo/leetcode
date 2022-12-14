@@ -33,7 +33,7 @@ class Solution:
         
 root = [3, 9, 20, None, 15, 7]   
 cd = TreeNode(root)
-clss = Solution()
+clss = Solution().levelOrder(cd)
 
-print(clss.levelOrder(cd))
+print(clss)
                                
