@@ -15,8 +15,6 @@ def countPairsNode(root: 'TreeNode', distance: int):
     if not root:
         return 0
 
-   
-
     def postOrder(node, distance):
         # there is no node to a leaf node to process
         
