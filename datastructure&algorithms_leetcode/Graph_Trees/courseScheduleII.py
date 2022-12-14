@@ -12,34 +12,53 @@ prerequisites = [[1, 0], [0,2], [1, 3], [1, 4], [3, 4]]
 
 def courseScheduleII(numCourse: int, prerequisites: list[list[int]]):
     
-    preMap= {i : [] for i in range(numCourse) }
+    if not prerequisites:
+        return [num for num in range(numCourse)]
+    
+    preMap= {i : [] for i in range(numCourse)}
     for course, preps in prerequisites:
         preMap[course].append(preps)
-
-    order = []
     
-    visit = set()
-    def dfs(crs):
+    white = set(preMap.keys())
+    # currently visiting -> visited during the dfs call
+    # black visiting -> already visited
+    grey = set()
+    black = set()
+    
+    order = []
+    def dfs(crs, grey, black, order):
+        grey.add(crs)
         
-        if crs in visit:
-            return False
+        for prep in preMap[crs]:
+            if prep in black:
+                continue
+            
+            if prep in grey:
+                return False
 
-        if preMap[crs] == []:
-            return True
-        
-        visit.add(crs)
-        for pre in preMap[crs]:
-            if not dfs(pre): return False
-        visit.remove(crs)
-        preMap[crs] = []
+            if not dfs(prep, grey, black, order):
+               return False
+           
+        order.append(crs)
+        grey.remove(crs)
+        black.add(crs)
+   
         return True
     
-    for crs in range(numCourse):
-        if not dfs(crs): return False
+    while white:
+        crs = white.pop()
+        if crs in black:
+            continue
+        
+        if not dfs(crs, grey, black, order):
+            return False
+    return order
 
-    return True
+
+
   
 
-
+numCourse = 5
+prerequisites = [[1, 0], [0,2], [1, 3], [1, 4], [3, 4]]
 
 print(courseScheduleII(numCourse, prerequisites))
