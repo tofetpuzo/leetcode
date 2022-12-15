@@ -15,7 +15,7 @@ def shortestPath(grid: list[list[int]], k: int):
     
     target = (ROWS -1 , COLS -1)
     if k >= (ROWS -1) + (COLS -1):
-        return ROWS + COLS -2
+        return ROWS + COLS - 2
 
     queue = collections.deque([(0, (0, 0, k))])
     direction = [[1, 0], [-1, 0], [0, 1], [0, -1]]

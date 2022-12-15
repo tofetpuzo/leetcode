@@ -3,6 +3,7 @@ import collections
 
 grid = [[0, 0, 0], [1, 1, 0], [0, 0, 0], [0, 1, 1], [0, 0, 0]]
 def shortetsPathMatrix(grid: list[list[int]]):
+    grid[0][0] = 1
 
     if grid[0][0] or grid[-1][-1]:
         return -1
@@ -10,8 +11,7 @@ def shortetsPathMatrix(grid: list[list[int]]):
     direction = [[0, 1], [0, -1], [1, 0], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]]
     ROWS = len(grid)
     COLS = len(grid[0])
-    grid[0][0] = 1
-
+   
     queue = collections.deque([(0, 0, 1)])
 
     while queue:
