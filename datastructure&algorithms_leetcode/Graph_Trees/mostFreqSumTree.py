@@ -44,6 +44,6 @@ def findFrequentTree(root: TreeNode):
         cur_sum = node.value + l_sum + r_sum
         
         freq_dict[cur_sum] +=1
-        max_freq =max(max_freq, cur_sum)
+        max_freq = max(max_freq, cur_sum)
         
         return cur_sum
