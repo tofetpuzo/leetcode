@@ -1,7 +1,7 @@
 from typing import List
 
 
-def find132pattern(nums: List[int])-> bool:
+def find132pattern(nums: List[int]):
     stack = [] # pair [ num, minLeft]
     
     curMin = nums[0]
