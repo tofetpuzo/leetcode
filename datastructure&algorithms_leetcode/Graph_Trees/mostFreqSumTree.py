@@ -20,12 +20,8 @@ def findFrequentTree(root: TreeNode):
     freq_dict = collections.defaultdict(int)
     max_freq = 0
 
-    dfs(root)
-    res = []
 
-    for val, freq in freq_dict.items():
-        if freq == max_freq:
-            res.append(val)
+    res = []
 
     def dfs(node):
         if not node:
@@ -44,6 +40,12 @@ def findFrequentTree(root: TreeNode):
         cur_sum = node.value + l_sum + r_sum
         
         freq_dict[cur_sum] +=1
-        max_freq =max(max_freq, cur_sum)
+        max_freq = max(max_freq, cur_sum)
         
         return cur_sum
+    
+    dfs(root)
+    
+    for val, freq in freq_dict.items():
+        if freq == max_freq:
+           res.append(val)
