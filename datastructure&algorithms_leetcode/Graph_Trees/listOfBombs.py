@@ -6,6 +6,7 @@
 # these boombs will further detonate the boombs that lie in their ranges.
 # given the list of bombs, return the max no of bombs that can be detonated if you are allowed to detonate only one bomb.
 import collections
+import math
 
 
 def maximumDetonation(bombs: list[list[int]]):
@@ -15,5 +16,26 @@ def maximumDetonation(bombs: list[list[int]]):
         for j in range(len(bombs)):
             if i == j:
                 continue
-            if bombs[i][2] >= maths.sqrt()
+            if bombs[i][2] >= math.sqrt((bombs[i][0] - bombs[j][0])**2 + (bombs[i][1] - bombs[j][1]) ** 2):
+                graph[i].append(j)
+
+    res = 0
+
+
+
+    def dfs(node):
+        for child in graph[node]:
+            if child not in visited:
+                visited.add(child)
+                dfs(child)
+
+
+    for i in range(len(bombs)):
+        visited = set([i])
+        dfs(i)
+        res = max(res, len(visited))
+        
+    return res
+
+
             
