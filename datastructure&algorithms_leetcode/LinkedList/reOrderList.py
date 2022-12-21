@@ -1,7 +1,8 @@
 class LinkedList:
-    def __init__(self):
+    def __init__(self, value):
+        self.value = value
         self.head = None
-        self.tail = None
+        self.next = None
 
 
     def __iter__(self):
@@ -14,4 +15,22 @@ class LinkedList:
         values = [str(x.value) for x in self]
         return '->'.join(values)
 
+    
+class Solution:
+    def reOrderList(self, head: LinkedList):
+        slow , fast = head, head.next
+        # the aim of this code is to find the middle of the list.
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
+        second = slow.next
+        prev = slow.next = None
+
+        while second:
+            temp = second.next
+            second.next = prev
+            prev = second
+            second = temp
+
+        
