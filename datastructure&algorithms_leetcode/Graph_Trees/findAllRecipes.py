@@ -43,7 +43,7 @@ def findAllRecipes(recipes: list[str], ingredients: list[list[str]], supplies: l
     indegree_no = collections.defaultdict(int)
     for recipe, ingre in zip(recipes, ingredients):
         indegree_no[recipe] = len(ingre)
-
+        
         for ingr in ingre:
             graph[ingr].append(recipe)
 
