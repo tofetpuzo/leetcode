@@ -22,7 +22,7 @@ class TrieNode:
             cur = cur.children[c]
         cur.isWord = True
     
-def wordSearch(board: List[List[str]], words: List[str]) -> List[str]:
+def wordSearch(board: List[List[str]], words: List[str]):
     root = TrieNode()
     
     for word in words:

@@ -16,6 +16,7 @@ def courseScheduleII(numCourse: int, prerequisites: list[list[int]]):
         return [num for num in range(numCourse)]
     
     preMap= {i : [] for i in range(numCourse)}
+    
     for course, preps in prerequisites:
         preMap[course].append(preps)
     
