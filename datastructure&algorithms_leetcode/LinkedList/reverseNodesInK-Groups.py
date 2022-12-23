@@ -37,6 +37,8 @@ def reverseNodesInKGroups(head: ListNode, k: int):
         groupPrev.next = kthNode
         groupPrev = tmp
 
+    return dummy.next
+
 def getKthNode(curr, k):
     while curr and k > 0:
         curr = curr.next
