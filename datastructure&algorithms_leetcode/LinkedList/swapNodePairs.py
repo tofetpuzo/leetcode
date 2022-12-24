@@ -1,6 +1,6 @@
 # given a linkedlist, swap every two adjacent node and return its head.
 # you may not modify the values in the list's nodes. only nodes itself may change.
-# head = [1, 2,3, 4]
+# head = [1, 2, 3, 4]
 # output = [2, 1 , 4, 3]
 class ListNode:
     def __init__(self, val=0, next=None):
