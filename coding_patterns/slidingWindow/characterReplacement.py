@@ -8,11 +8,16 @@ def longestSubStringKDistinct(char: str, k: int):
     for r in range(len(char)):
         count[char[r]] = 1 + count.get(char[r], 0)
         windowLength = (r - l + 1)
-        while windowLength  - max(count.values()) > k:
+        while (windowLength  - max(count.values())) > k:
             count[char[l]] -= 1
-            l +=1
+            l += 1
 
         res = max(res, r - l + 1)
     return res
 
-# input s = "aabacccac", k=1 -> output: 3 []
+
+s = "aabacccac"
+k = 1 
+print(longestSubStringKDistinct(s, k))
+
+#  output: 3 []
