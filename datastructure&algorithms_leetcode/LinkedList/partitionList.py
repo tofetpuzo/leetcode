@@ -10,3 +10,5 @@ class ListNode:
 
 def partitionList(head: ListNode, x: int):
     left , right = ListNode(), ListNode()
+    left_tail , right_tail = left, right
+    while 

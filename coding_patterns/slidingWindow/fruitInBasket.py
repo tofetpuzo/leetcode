@@ -10,7 +10,6 @@ from typing import List
 
 
 def totalFruit(tree: List[int]):
-    count = 0
     max_len = 0
     count = {}
     start = end = 0
@@ -24,5 +23,6 @@ def totalFruit(tree: List[int]):
         end +=1
     return max_len
 
-    
+tree = [3, 3, 3, 1, 2, 1, 1, 2, 3,3,4] 
+print(totalFruit(tree))
 
