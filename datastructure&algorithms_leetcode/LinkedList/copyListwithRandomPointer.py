@@ -23,3 +23,27 @@
 
 # Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
 # Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
+class Node:
+    def __init__(self, x: int, next: 'Node'=None , random: 'Node'=None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+
+
+def copyRandomList(head: 'Node'):
+    oldNodeToCopy = {None: None}
+    cur = head
+    while cur:
+        copy = Node(cur.val)
+        oldNodeToCopy[cur] = copy
+        cur = cur.next
+    
+    cur = head
+    while cur:
+        copy = oldNodeToCopy[cur]
+        copy.next = oldNodeToCopy[cur.next]
+        copy.random = oldNodeToCopy[cur.randpm]
+        cur = cur.next
+        
+
+    return oldNodeToCopy[head]
