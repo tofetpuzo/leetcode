@@ -33,11 +33,12 @@ def earliestAcq(logs: List[List[int]], N: int):
 
     for i in range(N):
         graph[i] = {i}
-        print(graph[i])
+        # print(graph[i])
 
 
     for ts , p1, p2 in logs:
         graph[p1] = graph[p1].union(graph[p2])
+        print(graph[p1])
 
         for p3 in graph[p1]:
             graph[p3] = graph[p1]

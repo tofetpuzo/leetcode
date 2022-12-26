@@ -42,7 +42,7 @@ def copyRandomList(head: 'Node'):
     while cur:
         copy = oldNodeToCopy[cur]
         copy.next = oldNodeToCopy[cur.next]
-        copy.random = oldNodeToCopy[cur.randpm]
+        copy.random = oldNodeToCopy[cur.random]
         cur = cur.next
         
 
