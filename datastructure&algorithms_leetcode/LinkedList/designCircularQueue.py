@@ -52,6 +52,8 @@ class ListNode:
         self.prev = prev
         self.next = next
 
+
+# NB: self.left and self.right are dummy nodes
 class designCircularQueue:
     def __init__(self, k: int):
         self.space = k
@@ -59,14 +61,32 @@ class designCircularQueue:
         self.right = ListNode(0, None, self.left)
         self.left.next = self.right
 
-    def enQueue(self):
+    def enQueue(self, value: int):
+        if self.isFull(): return False
+        cur =  ListNode(value, self.right, self.right.prev)
+        self.right.prev.next = cur
+        self.right.prev = cur
+        self.space -=1
+        return True
+
 
     def deQueue(self):
+        if self.isEmpty(): return False
+        if self.space == 1: return True
 
+        self.left.next  = self.left.next.next
+        self.left.next.prev = self.left
+        self.space +=1
+        return True
+
+  
     def Front(self):
-        if self.
+        if self.isEmpty(): return -1
+        return self.left.next.val
 
     def Rear(self):
+        if self.isEmpty(): return -1
+        return self.right.prev.val
 
     def isEmpty(self):
         return self.left.next == self.right
