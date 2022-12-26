@@ -37,7 +37,8 @@ def insertionSortList(head: ListNode):
         if cur.val >= prev.val:
             prev, cur = cur , cur.next
             continue
-        tmp = head
+
+        tmp = dummy
         while cur.val > tmp.next.val:
             tmp = tmp.next
 
@@ -46,4 +47,7 @@ def insertionSortList(head: ListNode):
         cur.next = tmp.next
         tmp.next = cur
 
+        # advance the pointers
+        cur = prev.next
 
+    return dummy.next
