@@ -17,7 +17,7 @@ def circularArray(nums: List[int]):
                 temp = nums[current]
                 nums[current] = 0
                 current = (current+temp) % len(nums)
-                print(current, temp , len(nums))
+                print(current, temp , len(nums), (current+temp) % len(nums))
             if current == i and was_in_loop:
                 return True
 
