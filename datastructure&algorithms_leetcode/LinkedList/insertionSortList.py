@@ -25,6 +25,25 @@
 # Input:  1->5->3->4->0
 # Output: 1->0->3->4->5
 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-def insertionSortList():
-    pass
+def insertionSortList(head: ListNode):
+    dummy = ListNode(0, head)
+    prev , cur = head, head.next
+    while cur:
+        if cur.val >= prev.val:
+            prev, cur = cur , cur.next
+            continue
+        tmp = head
+        while cur.val > tmp.next.val:
+            tmp = tmp.next
+
+        # this is like swapping the nodes less than this
+        prev.next = cur.next
+        cur.next = tmp.next
+        tmp.next = cur
+
+

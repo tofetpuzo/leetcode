@@ -5,7 +5,7 @@ tickets = [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
 ticket = [["JFK", "SFO"], ["JFK" ,"ATL"], ["SFO", "ATL"], ["ATL", "JFK"],["ATL", "SFO"]]
 
 # ouput = ["JFK", "ATL", "JFK", "SFO", "ATL", "SFO"]
-def reconstructItineray(tickets: List[List[str]]) -> List[str]:
+def reconstructItineray(tickets: List[List[str]]):
     adj = {src : [] for src , _ in tickets}
     
     tickets.sort()
