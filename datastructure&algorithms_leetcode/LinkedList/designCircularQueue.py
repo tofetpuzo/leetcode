@@ -46,7 +46,30 @@
 # myCircularQueue.enQueue(4); // return True
 # myCircularQueue.Rear();     // return 4
 
+class ListNode:
+    def __init__(self, val, prev, next):
+        self.val = val
+        self.prev = prev
+        self.next = next
 
+class designCircularQueue:
+    def __init__(self, k: int):
+        self.space = k
+        self.left = ListNode(0, None, None)
+        self.right = ListNode(0, None, self.left)
+        self.left.next = self.right
 
-def designCircularQueue():
-    pass
+    def enQueue(self):
+
+    def deQueue(self):
+
+    def Front(self):
+        if self.
+
+    def Rear(self):
+
+    def isEmpty(self):
+        return self.left.next == self.right
+
+    def isFull(self):
+        return self.space == 0
