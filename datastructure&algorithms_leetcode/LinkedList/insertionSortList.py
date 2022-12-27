@@ -42,7 +42,7 @@ def insertionSortList(head: ListNode):
         while cur.val > tmp.next.val:
             tmp = tmp.next
 
-        # this is like swapping the nodes less than this
+        # this is like swapping the nodes less than cur
         prev.next = cur.next
         cur.next = tmp.next
         tmp.next = cur

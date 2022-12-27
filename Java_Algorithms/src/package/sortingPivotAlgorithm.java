@@ -5,7 +5,7 @@ public class sortingPivotAlgorithm{
    public static void main(String[] args) {
     System.out.println(sumDigits(45));
     System.out.println(GCD(48, 18));
-    System.out.println(convertDecimalToBinary(8));
+    System.out.println(convertDecimalToBinary(7));
       
 
    }
