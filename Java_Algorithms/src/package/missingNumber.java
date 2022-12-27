@@ -1,21 +1,19 @@
 public class missingNumber {
 
     public static void main(String[] args) {
-        int [] intArray = {1, 2, 3, 4, 5, 6, 8, 9, 10};
-        System.out.println(missingNumbers(intArray));
+        // int [] intArray = {1, 2, 3, 4, 5, 6, 7, 9, 10};
+        int [] intArray  = {0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13};
+        missingNumbers(intArray);
     }
-    public static int missingNumbers(int [] intArray) {
-        int missingNumber = 0;
-        for (int i = 1; i < intArray.length; i++) {
-            for (int j = intArray.length - 1; j >= i; j--) {
-                int no = (j / i);
-                missingNumber = (missingNumber += no) % 10;
-                
-            }
-            
+    public static void missingNumbers(int [] intArray) {
+        int missingNumber = intArray.length+1;
+        System.out.println(missingNumber);
+        int m = 0;
+        for (int i = 0; i < intArray.length ; i++) { 
+            m = missingNumber + (i - intArray[i]);      
+            System.out.println(missingNumber + "si:" + i + " "+ "s: " + intArray[i] + ""); 
         }
-        return missingNumber;
-        
+        System.out.println(m);              
     }
 
     // public static void missingNumberas(int[] intArray) {
