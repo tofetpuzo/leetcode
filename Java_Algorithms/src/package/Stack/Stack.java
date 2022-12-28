@@ -8,5 +8,17 @@ public class Stack {
         this.top = -1;
         System.out.println("stack created");
     }
+    public boolean isEmpty(){
+        if(top == -1){
+            return true;
+        }else return false;
+    }
+    public boolean isFull() {
+        if(top == arr.length -1){
+            System.out.println("is full");
+            return true;
+        }else return false;
+        
+    }
     
 }
