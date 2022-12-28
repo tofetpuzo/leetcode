@@ -1,8 +1,5 @@
-
 import java.util.Arrays;
-
 public class twoSum {
-
     public static void main(String[] args) {
         int[] num = {1, 2, 3, 4, 5, 9};
         int[] result  = twoSums(num, 9);
@@ -19,3 +16,4 @@ public class twoSum {
        throw new IllegalArgumentException("No solution");
     }
 }
+
