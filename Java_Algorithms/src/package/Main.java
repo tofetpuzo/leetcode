@@ -12,7 +12,9 @@ public class Main {
         sl.insertLinkedList(11, 4);
         sl.insertLinkedList(345, 5);
         sl.traverseSinglyLinkedList();
-        sl.searchSinglyLinkedList(11);
+        sl.deleteSinglyLinkedList(5);
+        sl.traverseSinglyLinkedList();
+        // sl.searchSinglyLinkedList(11);
         // System.out.println(sl.head.next.value);
     }
 }

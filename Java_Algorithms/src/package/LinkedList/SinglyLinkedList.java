@@ -86,6 +86,28 @@ public class SinglyLinkedList {
         
     }
     // delete a node
+    public boolean deleteSinglyLinkedList(int deleteNode) {
+
+        if (head == null) {
+            System.out.println("this sl does not exist");
+
+        } 
+        else {
+            Node tempNode = head.next;
+            Node prevNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == deleteNode) {
+                    prevNode.next = tempNode.next; 
+                    tempNode = tempNode.next = null;
+                    break;
+                }
+                prevNode = prevNode.next;
+            }
+        }
+        size-=1;
+        return false;   
+        
+    }
     
     
 }
