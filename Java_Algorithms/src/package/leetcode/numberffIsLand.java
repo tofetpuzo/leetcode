@@ -32,17 +32,39 @@
 // ]
 // Output: 3
 
-package leetcode;
-
-
 public class numberffIsLand {
-
-    public int numIsLands(char[][] grid) {
-
-        int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    public static int numIsLands(char[][] grid) {
         
+ 
+        int res = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if(grid[i][j] == '1'){
+                    res+=1;
+                    depthfirstSeacrch(grid, i, j);
+                }          
+            }
+        }
 
-        return 0;
+        return res;
         
+    }
+    static void depthfirstSeacrch(char[][] grid, int r , int c) {
+        if(r < 0 || r >= grid.length || c <0 || c >= grid[0].length || grid[r][c] == '0'){return ;}
+        grid[r][c] = '0';
+        depthfirstSeacrch(grid, r+1, c);
+        depthfirstSeacrch(grid, r-1, c);
+        depthfirstSeacrch(grid, r, c+1);
+        depthfirstSeacrch(grid, r, c-1);
+    }
+
+    public static void main(String[] args) {
+     char[][] grid = {
+                {'1','1','0','0','0'},
+                {'1','1','0','0','0'},
+                {'0','0','1','0','0'},
+                {'0','0','0','1','1'}};
+
+    System.out.println(numIsLands(grid));
     }
 }
