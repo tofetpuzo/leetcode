@@ -2,7 +2,7 @@ from typing import List
 
 words = ["wrt", "wrf", "er", "ett", "rftt"]
 
-def alienOrder(words: List[str]) -> str:
+def alienOrder(words: List[str]):
     adj = {char: set() for word in words for char in word }
     
     for i in range(len(words) -1):
