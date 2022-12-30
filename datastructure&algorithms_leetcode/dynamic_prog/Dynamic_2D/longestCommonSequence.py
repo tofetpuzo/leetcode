@@ -15,3 +15,7 @@ def longestCommonSequence(text1: str, text2: str):
                 dp[i][j] = max(dp[i][j+1], dp[i+1][j])
     
     return dp[0][0]
+text1= "abcde" 
+text2 = "ace"
+print(longestCommonSequence(text1, text2))
+# output: 3
