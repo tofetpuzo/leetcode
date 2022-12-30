@@ -4,6 +4,7 @@ def EggDrop(K: int, N: int) -> int:
         # base case
         if K == 1: return N
         if N == 0: return 0
+        
         # Avoid double counting
         if (K, N) in memo:
             return memo[(K, N)]
@@ -16,3 +17,7 @@ def EggDrop(K: int, N: int) -> int:
         return res
     
     return dp(K, N)
+
+# K: Eggs, N: floors
+
+print(EggDrop(1, 6))
