@@ -24,7 +24,7 @@
 # The replacement must be in place and use only constant extra memory.
 
 #  [2, 3, 1] [2, 1, 3]
-#         ^
+#                   ^
 #  [1, 2, 3] is [1, 3, 2].
 #                   ^
 #  algorithm
@@ -51,3 +51,59 @@ def swap(nums, id1, id2):
     temp = nums[id1]
     nums[id1] = nums[id2]
     nums[id2] = temp
+
+#  [2, 3, 1] [2, 1, 3] ans [3,1,2]
+#                   ^
+#  [1, 2, 3] is [1, 3, 2].
+
+#  algorithm
+# step 1: let pointer be set to last
+# step 2: check if last number is >= first
+# but make sure that the first is > next[id1+1]
+# return list
+def check(nums, first , last):
+    if nums[first] <= nums[last]:
+        nums[first] , nums[last] = nums[last], nums[first]
+    return True
+
+def nextPermutation(nums):
+    l , r = 0, len(nums) -1
+    first = 0
+    # step 1: let pointer be set to last
+    while l <= r or first < r :
+        if nums[r] <= nums[l]:     
+            nums[l], nums[r] = nums[r] , nums[l]  
+            l+=1     
+            if check(nums, first , r) and nums[first] >= nums[first+1]:
+                swap(nums, first , first+1)
+                nextPermutation(nums)
+                return nums
+            else:
+                if nums[first] <= nums[first+1]:
+                    swap(nums, first , first+1)
+                    first+=1        
+        else:
+            if nums[r -1] < nums[r]:
+                nums[r-1] , nums[r] = nums[r] , nums[r -1]
+                
+
+        r+=1
+             
+        return nums
+
+
+
+
+
+
+# nums = [2, 3, 1]
+# nums = [3,2,1]
+# nums = [1, 2, 3]
+# nums = [9, 1,1,1,5]
+nums = [1, 2, 7, 9, 6, 4, 1] 
+# output = [1, 2, 9, 1, 4, 6, 7]
+
+# nums = [1, 7, 9, 9, 8, 3]
+# output = [1, 8, 3, 7, 9, 9]
+print(nextPermutation(nums))
+
