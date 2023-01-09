@@ -2,7 +2,8 @@
 # some courses may have prerequisties, for example to take course 0 you have to
 # first take course 1 which is expressed as a pair: [0, 1]
 
-# given the total number of courses and a list of prerequiste pairs, is it possible for you to finish all course?
+# given the total number of courses and a list of prerequiste pairs, 
+# is it possible for you to finish all course?
 
 # example 1:
 numCourse = 5
