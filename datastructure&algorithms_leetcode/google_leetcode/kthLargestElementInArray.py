@@ -24,8 +24,6 @@
 
 import collections
 
-
-
 def findKthLargest(nums: list, k: int):
         queue = collections.deque()
         """
@@ -45,8 +43,7 @@ def findKthLargest(nums: list, k: int):
         return queue[-1][-2]
           
 
-# nums = [3,2,3,1,2,4,5,5,6]
-# k = 4
+
 nums = [3,2,3,1,2,4,5,5,6]
 k = 4
 # nums = [3,2,1,5,6,4]
