@@ -48,7 +48,7 @@ def minWindow(searchString, t):
 
     # Here we use the 2 pointers approach
     while right < len(searchString):
-        print(counter_search)
+        # print(counter_search)
         counter_search[searchString[right]] += 1
         if searchString[right] in counter_t: 
             # r : Counter({'r': 1, 'o': 1, 'a': 1, 'm': 1})
@@ -63,12 +63,13 @@ def minWindow(searchString, t):
             
             counter_search[searchString[left]] -= 1
             if searchString[left] in counter_t and counter_search[searchString[left]] < counter_t[searchString[left]]:
+                # print(counter_search[searchString[left]], counter_t[searchString[left]])
                 count-=1
                 
             left += 1
-        
+        print(counter_search[searchString[left]], counter_t[searchString[left]])
         right += 1
-        print(counter_search, counter_t)
+        # print(counter_search[searchString[left]], counter_t[searchString[left]])
         
     return minimum_window
 
