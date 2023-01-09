@@ -61,38 +61,61 @@ def swap(nums, id1, id2):
 # step 2: check if last number is >= first
 # but make sure that the first is > next[id1+1]
 # return list
-def check(nums, first , last):
-    if nums[first] <= nums[last]:
-        nums[first] , nums[last] = nums[last], nums[first]
-    return True
+# def check(nums, first , last):
+#     if nums[first] <= nums[last]:
+#         nums[first] , nums[last] = nums[last], nums[first]
+#     return True
 
-def nextPermutation(nums):
-    l , r = 0, len(nums) -1
-    first = 0
-    # step 1: let pointer be set to last
-    while l <= r or first < r :
-        if nums[r] <= nums[l]:     
-            nums[l], nums[r] = nums[r] , nums[l]  
-            l+=1     
-            if check(nums, first , r) and nums[first] >= nums[first+1]:
-                swap(nums, first , first+1)
-                nextPermutation(nums)
-                return nums
-            else:
-                if nums[first] <= nums[first+1]:
-                    swap(nums, first , first+1)
-                    first+=1        
-        else:
-            if nums[r -1] < nums[r]:
-                nums[r-1] , nums[r] = nums[r] , nums[r -1]
+# def nextPermutation(nums)
+#     l , r = 0, len(nums) -1
+#     first = 0
+#     # step 1: let pointer be set to last
+#     while l <= r or first < r :
+#         if nums[r] <= nums[l]:     
+#             nums[l], nums[r] = nums[r] , nums[l]  
+#             l+=1     
+#             if check(nums, first , r) and nums[first] >= nums[first+1]:
+#                 swap(nums, first , first+1)
+#                 nextPermutation(nums)
+#                 return nums
+#             else:
+#                 if nums[first] <= nums[first+1]:
+#                     swap(nums, first , first+1)
+#                     first+=1        
+#         else:
+#             if nums[r -1] < nums[r]:
+#                 nums[r-1] , nums[r] = nums[r] , nums[r -1]
                 
 
-        r+=1
+#         r+=1
              
-        return nums
+#         return nums
 
 
+def reverse(nums, begin, end):
+    while begin < end:
+        swap(nums, begin, end)
+        begin+=1
+        end -=1
 
+def permutation(nums):
+    if len(nums) == 1:
+        return
+    if len(nums) == 2:
+        return swap(nums, 0, 1)
+
+    dec = len(nums) - 2
+    while dec >= 0 and nums[dec] >= nums[dec+1]:
+        dec -=1
+    reverse(nums, dec+1, len(nums) -1)
+    if dec == -1:
+        return
+    num_next = dec + 1
+    while num_next < len(nums) and nums[num_next] <= nums[dec]:
+        num_next +=1
+    swap(nums, num_next, dec)
+
+    return nums
 
 
 
@@ -105,5 +128,7 @@ nums = [1, 2, 7, 9, 6, 4, 1]
 
 # nums = [1, 7, 9, 9, 8, 3]
 # output = [1, 8, 3, 7, 9, 9]
-print(nextPermutation(nums))
+# print(nextPermutation(nums))
+# print(reverse(nums, 0, len(nums)))
+print(permutation(nums))
 
