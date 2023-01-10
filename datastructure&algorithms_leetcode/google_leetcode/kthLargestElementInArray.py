@@ -40,11 +40,13 @@ def findKthLargest(nums: list, k: int):
         idx = 0   
         queue = collections.deque()
 
-        if len(nums) == 1:
+        if len(nums) == 1 and k == 1:
            return nums[0]
 
-        if len(nums) == 2:       
-           return nums[1]
+        if len(nums) == 2 and k == 2: 
+            return nums[0]
+       
+       
 
         for i in range(len(nums) -1):
         #     [1, 2, 4, 5]
@@ -60,9 +62,14 @@ def findKthLargest(nums: list, k: int):
 
 # nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
 # k = 4
-nums = [3,2,1,5,6,4]
-k = 2
+# nums = [3,2,1,5,6,4]
+# k = 2
 
+# nums = [2, 1]
+# k = 1
+
+nums = [2, 1]
+k = 2
 
 
 print(findKthLargest(nums, k))
