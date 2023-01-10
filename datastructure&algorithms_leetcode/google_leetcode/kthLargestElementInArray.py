@@ -31,32 +31,24 @@ def findKthLargest(nums: list, k: int):
         :type k: int
         :rtype: int
         """
-        # x=len(nums)-k
-        # heapq.heapify(nums)
-        # for i in range(x):
-        #     heapq.heappop(nums)
-        # return heapq.heappop(nums)
+        x=len(nums)-k
+        heapq.heapify(nums)
+        for _ in range(x):
+            heapq.heappop(nums)
+        return heapq.heappop(nums)
 
-        idx = 0   
-        queue = collections.deque()
+        # idx = 0   
+        # queue = collections.deque() 
 
-        if len(nums) == 1 and k == 1:
-           return nums[0]
-
-        if len(nums) == 2 and k == 2: 
-            return nums[0]
-       
-       
-
-        for i in range(len(nums) -1):
-        #     [1, 2, 4, 5]
-            if nums[i] >= nums[i + 1]:
-                continue
-            else:
-                idx+=1
-                if idx == k:
-                   queue.append(nums[:i+2])
-        return queue[-1][-2]
+        # for i in range(len(nums) -1):
+        # #     [1, 2, 4, 5]
+        #     if nums[i] >= nums[i + 1]:
+        #         continue
+        #     else:
+        #         idx+=1
+        #         if idx == k:
+        #            queue.append(nums[:i+2])
+        # return queue[-1][-2]
           
 
 
