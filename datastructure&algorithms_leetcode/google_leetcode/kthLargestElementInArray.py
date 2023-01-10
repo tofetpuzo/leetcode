@@ -53,7 +53,7 @@ def findKthLargest(nums: list, k: int):
             else:
                 idx+=1
                 if idx == k:
-                  queue.append(nums[:i+2])
+                   queue.append(nums[:i+2])
         return queue[-1][-2]
           
 
