@@ -23,15 +23,29 @@
 # Output: 4
 
 import collections
+import heapq
 
 def findKthLargest(nums: list, k: int):
-        queue = collections.deque()
         """
         :type nums: List[int]
         :type k: int
         :rtype: int
         """
+        # x=len(nums)-k
+        # heapq.heapify(nums)
+        # for i in range(x):
+        #     heapq.heappop(nums)
+        # return heapq.heappop(nums)
+
         idx = 0   
+        queue = collections.deque()
+
+        if len(nums) == 1:
+           return nums[0]
+
+        if len(nums) == 2:       
+           return nums[1]
+
         for i in range(len(nums) -1):
         #     [1, 2, 4, 5]
             if nums[i] >= nums[i + 1]:
@@ -39,15 +53,15 @@ def findKthLargest(nums: list, k: int):
             else:
                 idx+=1
                 if idx == k:
-                   queue.append(nums[:i+2])
+                  queue.append(nums[:i+2])
         return queue[-1][-2]
           
 
 
-nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
-k = 4
-# nums = [3,2,1,5,6,4]
-# k = 2
+# nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
+# k = 4
+nums = [3,2,1,5,6,4]
+k = 2
 
 
 

@@ -30,7 +30,7 @@
 import collections
 
 
-def shortestPath(self, grid: list[list[int]], k):
+def shortestPath(grid: list[list[int]], k):
     """
     :type grid: List[List[int]]
     :type k: int
@@ -54,11 +54,25 @@ def shortestPath(self, grid: list[list[int]], k):
         if (row, col) == target:
             return steps
         
-        for dr, dc in directions:
+        for dr, dc in direction:
             new_row = dr + row
-            new_col = dr + col
+            new_col = dc + col
 
-            if(0<= new_row< rows) and (0< new_col<= cols):
-                new_removals = removal_left - grid[new_row][]
+            if(0<= new_row< rows) and (0 <= new_col < cols):
+                new_removals = removal_left - grid[new_row][new_col]
+                new_state = (new_row, new_col, new_removals)
 
-        
+                if new_removals >= 0 and new_state not in seen:
+                    seen.add(new_state)
+                    queue.append([(steps+1), new_state])
+
+    return -1
+
+# grid = [[0,1,1],[1,1,1],[1,0,0]] 
+# k = 1
+
+
+grid = [[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]]
+k = 1
+# Output: 6
+print(shortestPath(grid, k))
