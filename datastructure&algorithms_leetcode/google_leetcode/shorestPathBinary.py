@@ -29,3 +29,41 @@
 
 # Input: grid = [[1,0,0],[1,1,0],[1,1,0]]
 # Output: -1
+
+import collections
+
+
+def shortestPathBinaryMatrix(grid):
+
+    if grid[0][0] and grid[-1][-1]:
+        return-1
+
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
+
+    queue = collections.deque([(0, 0, 1)])
+    rows = len(grid) -1
+    cols = len(grid[0]) -1
+
+    grid[0][0] = 1
+
+    while queue:
+        x, y, path_len = queue.popleft()
+
+        if (x, y) == (rows, cols):
+            return path_len
+        
+        for dr , dc in directions:
+            new_rol = dr + x
+            new_col = dc + y
+
+            if(0 <= new_rol < rows+1 ) and (0 <= new_col < cols+1) and not grid[new_rol][new_col]:
+                grid[new_rol][new_col] = 1
+                queue.append((new_rol, new_col, path_len+1))
+
+    return -1
+
+grid = [[0,0,0],[1,1,0],[1,1,0]]
+print(shortestPathBinaryMatrix(grid))
+
+
+        
