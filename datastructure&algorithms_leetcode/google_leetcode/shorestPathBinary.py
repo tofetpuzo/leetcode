@@ -36,7 +36,7 @@ import collections
 def shortestPathBinaryMatrix(grid):
 
     if grid[0][0] and grid[-1][-1]:
-        return-1
+        return -1
 
     directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
 
