@@ -32,23 +32,5 @@ def numberofIslands(grid: List[List[int]]):
                 res +=1
 
     return res
-
-
-        
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-     # input s = "aabacccac", k=1 -> output: 3 []
+# input s = "aabacccac", k=1 -> output: 3 []
