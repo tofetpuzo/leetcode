@@ -1,0 +1,13 @@
+.DS_STORE
+node_modules
+/build
+leetcode
+6666da9bf-3d07-44be-beeb-a8c9a57992dc
+.idea
+*.iml
+*.log
+*.class
+*.jar
+
+java_ubs/
+leetcode/datastructure&algorithms_leetcode/C++_Program/hello
